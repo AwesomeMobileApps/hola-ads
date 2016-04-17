@@ -1,0 +1,58 @@
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>¡Hola Mobile!</title>
+ 
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+      <div class="masthead">
+        <h3 class="text-muted">¡Hola Mobile!</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+            {{> main}}
+        </div>
+ 
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; 2016, by <a href="https://github.com/ph-7"><abbr title="Pierre-Henry Soria">pH7</abbr></a></p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+
+
+
+	<template name="main">
+	<form class="new-ads">
+	  	<div class="form-group">
+	   		 <input type="text" name="text" class="form-control" placeholder="Yo! Enter What You Want/Need To Sell!" />
+	   		 <textarea rows="4" cols="50" name="description" class="form-control field-space" placeholder="Enter An Awesome Description Of What You Are Selling"></textarea>
+	   		 <!-- <input type="text" name="fullname" class="fullname form-control field-space" placeholder="Finally, Type Your Lovely Name &amp; Press Enter!" /> -->
+	    </div> 
+	</form>
+
+		<ul>
+			{{#each hola}}
+				<li>
+				<button class="delete-ad">&times;</button>
+					<span class="text">
+					    {{fullname}}<br />
+						<strong>{{text}}</strong><br />
+						{{description}}
+					</span>
+				</li>
+			{{/each}}
+  		</ul>
+	</template>
